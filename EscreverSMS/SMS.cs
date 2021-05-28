@@ -12,8 +12,13 @@ namespace EscreverSMS
         public SMS(string input)
         {
             mensagem = input;
+            ValidarTamanhoDaMensagem();
         }
 
+        /// <summary>
+        /// Dada uma mensagem de texto limitada a 255 caracteres, retorna a seqüência de números equivalente em teclado de celular. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, é indicada como "_"
+        /// </summary>
+        /// <returns>Sequência de números equivalente em teclado de celular</returns>
         public string Processar()
         {
             string strNumerosResultado = "";
@@ -37,11 +42,11 @@ namespace EscreverSMS
             return strNumerosResultado;
         }
 
-        private string EscreverNumero(string mensagem)
+        private string EscreverNumero(string letra)
         {
             string numero = "";
 
-            switch (mensagem)
+            switch (letra)
             {
                 case "A": numero = "2"; break;
                 case "B": numero = "22"; break;
@@ -70,10 +75,16 @@ namespace EscreverSMS
                 case "Y": numero = "999"; break;
                 case "Z": numero = "9999"; break;
                 case " ": numero = "0"; break;
-                default: numero = mensagem; break;
+                default: numero = letra; break;
             }
 
             return numero;
+        }
+
+        private void ValidarTamanhoDaMensagem()
+        {
+            if (mensagem.Length > 255)
+                throw new ArgumentOutOfRangeException("A mensagem deve ter no máximo 255 caracteres!");
         }
     }
 }
