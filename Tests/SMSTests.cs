@@ -8,7 +8,7 @@ namespace Tests
     public class SMSTests
     {
         [TestMethod]
-        public void TestarInputValido()
+        public void DeveSerInputValidoUppercase()
         {
             SMS sms = new SMS("SEMPRE ACESSO O DOJOPUZZLES");
 
@@ -16,8 +16,16 @@ namespace Tests
         }
 
         [TestMethod]
+        public void DeveSerInputValidoLowercase()
+        {
+            SMS sms = new SMS("sempre acesso o dojopuzzles");
+
+            Assert.AreEqual("77773367_7773302_222337777_777766606660366656667889999_9999555337777", sms.SequenciaNumerica());
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void TestarInputInvalido()
+        public void NaoDeveSerInputValido()
         {
             _ = new SMS("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" +
                 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASOCORROOOOO" +

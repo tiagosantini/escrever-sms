@@ -46,7 +46,7 @@ namespace EscreverSMS
         {
             string numero = "";
 
-            switch (letra)
+            switch (letra.ToUpper())
             {
                 case "A": numero = "2"; break;
                 case "B": numero = "22"; break;
