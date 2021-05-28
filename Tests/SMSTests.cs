@@ -12,7 +12,7 @@ namespace Tests
         {
             SMS sms = new SMS("SEMPRE ACESSO O DOJOPUZZLES");
 
-            Assert.AreEqual("77773367_7773302_222337777_777766606660366656667889999_9999555337777", sms.Processar());
+            Assert.AreEqual("77773367_7773302_222337777_777766606660366656667889999_9999555337777", sms.SequenciaNumerica());
         }
 
         [TestMethod]

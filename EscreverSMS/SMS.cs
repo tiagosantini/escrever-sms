@@ -19,7 +19,7 @@ namespace EscreverSMS
         /// Dada uma mensagem de texto limitada a 255 caracteres, retorna a seqüência de números equivalente em teclado de celular. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, é indicada como "_"
         /// </summary>
         /// <returns>Sequência de números equivalente em teclado de celular</returns>
-        public string Processar()
+        public string SequenciaNumerica()
         {
             string strNumerosResultado = "";
             string saidaAtual;
