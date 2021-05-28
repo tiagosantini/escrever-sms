@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dicionario.cs" />
     <Compile Include="SMS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
